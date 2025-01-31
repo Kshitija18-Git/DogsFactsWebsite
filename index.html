@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dog Facts</h1>
+        <p id="factDisplay">Click the button to get a fact!</p>
+        <button id="factButton">Get Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Dogs have an incredible sense of smell, estimated to be 10,000 to 100,000 times more acute than humans.",
+            "The average lifespan of a dog varies by breed but is typically between 10 and 13 years.",
+            "Dogs can learn a wide variety of commands and tricks, making them highly trainable.",
+            "A dog's nose print is unique, similar to a human fingerprint.",
+            "Dogs sweat through their paws, which is why they might leave wet footprints on the floor.",
+            "Dogs can see in color, though not as vividly as humans; they primarily perceive blues and yellows.",
+            "The fastest dog breed, the Greyhound, can reach speeds of up to 45 miles per hour.",
+            "Dogs exhibit a wide range of vocalizations, including barking, howling, whining, and growling, each with its own meaning.",
+            "A dog's tail wags can communicate different emotions, not just happiness; they can also indicate stress or anxiety.",
+            "Dogs are social animals and often thrive on companionship, forming strong bonds with their human families."
+        ];
+
+        const factDisplay = document.getElementById('factDisplay');
+        const factButton = document.getElementById('factButton');
+
+        function getRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            return facts[randomIndex];
+        }
+
+        factButton.addEventListener('click', () => {
+            factDisplay.textContent = getRandomFact();
+        });
+    </script>
+</body>
+</html>
